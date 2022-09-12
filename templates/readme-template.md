@@ -3,12 +3,22 @@ By {your_name}
 
 ## Readme Outline
 - [Project Description](#project_desc)  
-    - 
-- [Project Planning](#plan)  
-    - 
-- [Data Exploration](#explore)  
+    - [Scenario](#scenario)
+    - [Goals](#goals)
+        - [Deliverables](#deliverables)
+    - [Project Dependencies](#dependencies)
+
+- [About the data](#data)
+    - Scope
+    - Acquiring
+    - Preparing
     - Data Dictionary
     - Key Findings
+
+- [Project Planning](#plan)  
+    - Hypothesis
+    - Steps
+    - Conclusion
 
 
 
@@ -85,3 +95,8 @@ What does the data represent? }
 {How was the data prepared for exploration?  Was any data fabricated through imputing or resampling?}
 
 ## Data Dictionary
+
+# Project Planning <a name="plan"></a>
+
+## Initial Hypotheses
+
