@@ -33,3 +33,43 @@ def upsample_target(df, target, val):
                                 )
     #Then glue the upsample to the original
     return pd.concat([minority_upsample, df[df[target]!=val]])
+
+
+def train_scaler(df, kind='min_max'):
+    """Quickly build a scaler without worrying about importing the right thing.
+    Will fit to the entire dataframe so you should only pass the columns you wish to scale."""
+    if kind == 'min_max':
+        from sklearn.preprocessing import MinMaxScaler
+        scaler = MinMaxScaler()
+    elif kind == 'robust':
+        from sklearn.preprocessing import RobustScaler
+        scaler = RobustScaler()
+    else:
+        raise Exception('Invalid kind parameter. Expected one of ["min_max","robust"]')
+    scaler.fit(df)
+    return scaler
+
+def train_scaler_with_feats(df, feats, kind='min_max'):
+    """Quickly build a scaler without worrying about importing the right thing.
+    Will fit to the entire dataframe so you should only pass the columns you wish to scale."""
+    if kind == 'min_max':
+        from sklearn.preprocessing import MinMaxScaler
+        scaler = MinMaxScaler()
+    elif kind == 'robust':
+        from sklearn.preprocessing import RobustScaler
+        scaler = RobustScaler()
+    else:
+        raise Exception('Invalid kind parameter. Expected one of ["min_max","robust"]')
+    scaler.fit(df[feats])
+    return scaler
+
+def scale_df(df, scaler):
+    """Same as scaler.transform(), but returns a dataframe with index and columns preserved."""
+    X = pd.DataFrame(scaler.transform(df), index=df.index, columns=df.columns )
+    return X
+
+def train_onehot_encoder(df, cats):
+    from sklearn.preprocessing import OneHotEncoder
+    encoder = OneHotEncoder(handle_unknown='ignore')
+    encoder.fit(df[cats])
+    return encoder

@@ -1,6 +1,19 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from helpers.pysankey import sankey
+
+def plot_crosstab_treemap(crosstab):
+    melted = pd.melt(crosstab.reset_index(), id_vars='index')
+    import plotly.express as px
+    fig = px.treemap(melted, path=[px.Constant("all"), 'index', 'variable'], values='value')
+    fig.update_traces(root_color="lightgrey")
+    fig.update_layout(
+        autosize=False,
+        width=800,
+        height=400,
+        margin={'t':30,'b':10,'l':10,'r':10})
+    fig.show()
 
 def plot_wordcloud_from_freq(freq , figsize=[12,9]):
     
