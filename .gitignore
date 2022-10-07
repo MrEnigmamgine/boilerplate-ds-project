@@ -3,4 +3,4 @@ env.py
 .ipynb_checkpoints/
 __pycache__
 *.csv
-scratch.ipynb
+scratch*.ipynb
