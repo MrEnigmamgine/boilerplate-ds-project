@@ -1,0 +1,23 @@
+---
+seed: 8
+data:
+  pydataset: "titanic"
+  sql:
+    envfile: env.py
+    database: zillow
+    query: |
+      SELECT 
+          *
+      FROM
+          zillow.properties_2017
+              RIGHT JOIN zillow.predictions_2017 USING(parcelid)
+              LEFT JOIN zillow.airconditioningtype using(airconditioningtypeid)
+              LEFT JOIN zillow.architecturalstyletype using(architecturalstyletypeid)
+              LEFT JOIN zillow.heatingorsystemtype using(heatingorsystemtypeid)
+              LEFT JOIN zillow.propertylandusetype USING (propertylandusetypeid)
+              LEFT JOIN zillow.typeconstructiontype USING (typeconstructiontypeid) 
+              LEFT JOIN zillow.storytype USING (storytypeid)
+      WHERE
+        propertylandusetypeid = 261
+      ;
+  
