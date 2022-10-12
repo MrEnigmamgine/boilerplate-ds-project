@@ -1,23 +1,18 @@
 ---
 seed: 8
-data:
-  pydataset: "titanic"
+target: 'survived'
+acquire:
+  # Only one option may be true
+  pydataset: 
+    use: false
+    dataset: 'titanic'
+  script:
+    use: true
+    path: 'C:\Users\Crux\Desktop\script.py'
   sql:
+    use: false
     envfile: env.py
-    database: zillow
+    database: titanic_db
     query: |
-      SELECT 
-          *
-      FROM
-          zillow.properties_2017
-              RIGHT JOIN zillow.predictions_2017 USING(parcelid)
-              LEFT JOIN zillow.airconditioningtype using(airconditioningtypeid)
-              LEFT JOIN zillow.architecturalstyletype using(architecturalstyletypeid)
-              LEFT JOIN zillow.heatingorsystemtype using(heatingorsystemtypeid)
-              LEFT JOIN zillow.propertylandusetype USING (propertylandusetypeid)
-              LEFT JOIN zillow.typeconstructiontype USING (typeconstructiontypeid) 
-              LEFT JOIN zillow.storytype USING (storytypeid)
-      WHERE
-        propertylandusetypeid = 261
-      ;
+      SELECT * FROM titanic_db.passengers;
   

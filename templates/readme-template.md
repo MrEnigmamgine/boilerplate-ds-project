@@ -1,23 +1,33 @@
 # Title
-By {your_name}
+By: {your_name(s)}  
+Date: {}
 
 ## Readme Outline
 - [Project Description](#project_desc)  
     - [Scenario](#scenario)
     - [Goals](#goals)
         - [Deliverables](#deliverables)
-    - [Project Dependencies](#dependencies)
+    - [Reproducing the Project](#reproducing)
+        - [Project Dependencies](#dependencies)
 
 - [About the data](#data)
     - Scope
     - Acquiring
     - Preparing
     - Data Dictionary
-    - Key Findings
 
 - [Project Planning](#plan)  
     - Hypothesis
-    - Steps
+        - Hypothesis Testing
+    - Modeling
+        - Model flavors
+        - Evaluation Metrics
+    - Definition of success
+
+
+- [Project Findings](#findings)  
+    - Key Findings
+    - Next Steps
     - Conclusion
 
 
@@ -41,7 +51,7 @@ By {your_name}
 
 {What artifacts, if any, are expected as a result of this project.}
 
-## Reproducing this project
+## Reproducing this project <a name="reproducing"></a>
 
 {Are there any special considerations one must take to run this project on another machine?  Usually yes.  The most common considerations have been filled out already below.}
 
@@ -77,7 +87,7 @@ Dependencies can be installed quickly with just a few lines of code.
 ```
 
 
-# About the data
+# About the data <a name="data"></a>
 
 {What is the source of the data?
 What does the data represent? }
