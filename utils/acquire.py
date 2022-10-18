@@ -87,7 +87,7 @@ def read_script(config=CFG):
             raise Exception(f'The path specified in "acquire.script": "{path}" does not exist.')
     return None
 
-def wrangle(path='config.yaml'):
+def acquire(path='config.yaml'):
     
     # Grab a fresh copy of config to avoid having to restart kernal.
     config = load_config(path)
