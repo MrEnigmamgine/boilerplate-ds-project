@@ -6,6 +6,6 @@ Goal: Standardize the acquisition
 
 Configurable forms of input
 - pydataset
-- sql source
+<!-- - sql source -->
 - python script
-
+- CSV file
