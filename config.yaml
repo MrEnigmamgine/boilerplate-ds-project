@@ -2,8 +2,8 @@
 random_state: 8
 target: 'survived'
 acquire:
-  cache: # For now asssumes that we are caching to/from a csv file until I can find a more elegant solution.
-    path: './cache/data.csv'
+  cache: # For now asssumes that we are caching to/from a json file until I can find a more elegant solution.
+    path: './cache/data.json'
     refresh: false
     auto_update_refresh_config: true #Define this setting if you want refresh set to false after a successful refresh. ##TODO
   # Only acquires one method.  Priority order is cache -> script -> pydataset

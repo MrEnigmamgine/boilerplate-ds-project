@@ -34,14 +34,14 @@ def write_cache(data: pd.DataFrame, config=CFG):
     if not os.path.exists(folder):
         os.makedirs(folder)
     
-    data.to_csv(path, index=False)
+    data.to_json(path, index=False)
 
 def read_cache(config=CFG):
     cache_cfg = get_config('acquire.cache', CFG)
     path = cache_cfg.get('path')
 
     if os.path.exists(path):
-        data = pd.read_csv(path)
+        data = pd.read_json(path)
         return data
     else:
         return None

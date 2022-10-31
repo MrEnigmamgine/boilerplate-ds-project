@@ -1,0 +1,20 @@
+# Jupyter Notebooks
+ipython
+jupyter
+
+# Common DS modules
+numpy
+pandas
+
+# ML modules
+sklearn
+
+# Visulaization modules
+matplotlib
+seaborn
+
+# Utility modules
+pyyaml
+
+# Data source modules
+pydataset
