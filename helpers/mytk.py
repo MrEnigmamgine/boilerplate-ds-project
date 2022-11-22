@@ -167,13 +167,12 @@ def get_column_types(df, override_categorical=[], override_numerical=[]):
         if val in num_cols:
             num_cols.remove(val)
             cat_cols.append(val)
+
     for val in override_numerical:
         if val in cat_cols:
             cat_cols.remove(val)
             num_cols.append(val)
             
-    # cat_cols.sort()
-    # num_cols.sort()
     out = {
         'cat': cat_cols,
         'num': num_cols

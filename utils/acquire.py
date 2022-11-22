@@ -7,9 +7,9 @@ import pandas as pd
 from config import CFG, load_config, get_config
 
 
-## Allows the temporary changing of python's directory context.  Useful for running scripts in a different context.
 @contextmanager
 def cwd(path):
+    """Allows the temporary changing of python's directory context.  Useful for running scripts in a different context."""
     oldpwd = os.getcwd()
     os.chdir(path)
     try:
